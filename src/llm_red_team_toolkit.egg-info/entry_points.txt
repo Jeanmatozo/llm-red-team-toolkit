@@ -1,0 +1,2 @@
+[console_scripts]
+llm-rt-run = llm_rt.runner:cli_run
