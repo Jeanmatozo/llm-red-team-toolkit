@@ -24,8 +24,14 @@ def utc_now_iso() -> str:
 
 
 def new_run_id() -> str:
-    # run-id is stable and shareable (not a secret)
-    return f"{utc_now_iso()}_{uuid.uuid4()}"
+    # Windows-safe: avoid ":" in filenames
+    ts = utc_now_iso()
+    ts_safe = (
+        ts.replace(":", "-")
+          .replace("+", "Z")
+    )
+    return f"{ts_safe}_{uuid.uuid4()}"
+
 
 
 def ensure_dir(path: str) -> Path:
