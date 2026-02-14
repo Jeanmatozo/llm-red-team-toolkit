@@ -1,1 +1,17 @@
+[project]
+name = "llm-red-team-toolkit"
+version = "0.1.0"
+description = "Prompt-suite + evaluation harness for authorized LLM robustness testing."
+requires-python = ">=3.10"
+dependencies = [
+  "openai>=1.40.0",
+  "pydantic>=2.7.0",
+  "pyyaml>=6.0.1",
+]
+
+[project.scripts]
+llm-rt-run = "llm_rt.runner:cli_run"
+
+[tool.ruff]
+line-length = 100
 
