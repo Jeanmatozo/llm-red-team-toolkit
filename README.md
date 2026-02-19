@@ -113,3 +113,9 @@ llm-red-team-toolkit/
 │   └── summarize_results.py
 └── README.md
 
+```
+---
+Disclaimer
+
+This toolkit is intended for authorized security testing and research only.
+Do not use against systems without explicit permission.
