@@ -66,6 +66,12 @@ The goal is **signal over spectacle**: reproducible evidence instead of anecdota
 
 ---
 
+**Campaign 01** demonstrates a full adversary flow against an LLM system,
+from reconnaissance to objective-driven exfiltration.
+Some stages are intentionally simplified to focus on reasoning and tradecraft.
+
+---
+
 ## Technical Architecture
 
 ```text
