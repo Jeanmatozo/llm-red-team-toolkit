@@ -40,7 +40,6 @@ The goal is **signal over spectacle**: reproducible evidence instead of anecdota
 
 ---
 
-
 ## Adversary Campaigns
 
 This repository models **LLM red teaming as adversary operations**, not isolated prompt tricks.
@@ -52,10 +51,14 @@ Each campaign follows a simplified kill-chain approach:
 - Objective-driven exfiltration
 - Artifact generation
 
-Some stages are intentionally documented rather than fully implemented to emphasize **reasoning, sequencing, and tradecraft**.
+Some stages are intentionally **documented rather than executed** to emphasize **reasoning, sequencing, and tradecraft**.
 
-See:
-- `docs/campaign_01.md`
+### Included Campaigns
+
+- **Campaign 01 — Contextual Boundary Discovery**
+  - Demonstrates a full adversary flow from recon to objective-driven exfiltration
+  - Focuses on low-noise interaction and contextual privilege expansion
+  - See: `docs/campaign_01.md`
 
 ---
 
@@ -84,29 +87,27 @@ See:
   - Designed for CI and review workflows
 
 ---
-**Campaign 01** demonstrates a minimal but complete adversary flow against an LLM system,
-from reconnaissance to objective-driven exfiltration.
-The emphasis is on **attacker reasoning and boundary discovery**, not brute-force jailbreaks.
 
----
+## Repository Structure
 
+```text
 llm-red-team-toolkit/
 ├── src/
 │   └── llm_rt/
-│       ├── runner.py
-│       ├── scoring.py
-│       ├── models.py
-│       ├── config.py
+│       ├── runner.py        # Core execution engine
+│       ├── scoring.py       # Lightweight evaluation logic
+│       ├── models.py        # Model adapters
+│       ├── config.py        # Centralized configuration
 │       └── utils.py
-├── prompt_suites/
+├── prompt_suites/           # Campaign stages (kill-chain aligned)
 │   ├── recon.yaml
 │   ├── foothold.yaml
 │   ├── privilege_escalation.yaml
 │   └── exfiltration.yaml
-├── artifacts/
+├── artifacts/               # Audit trail (JSONL)
 │   └── campaign_01_results.jsonl
 ├── docs/
-│   └── campaign_01.md
+│   └── campaign_01.md       # Campaign narrative and analysis
 ├── scripts/
 │   ├── run_suite.py
 │   └── summarize_results.py
